@@ -1,5 +1,5 @@
-# my-first-2d-game
+Note:
+Branch: Original Backup
+This has the backup with the code for character animations (idle (standing), run and jump).
 
-Backup copy of the project is in branch "Backup" --> jump, run, idle animations is included in this backup
-
-I will be updating the Level 1 branch frequently.
+I will be updating the Level 1 branch frequently. 
