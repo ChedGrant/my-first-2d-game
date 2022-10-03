@@ -42,17 +42,17 @@ private MovementState state = MovementState.idle;
        {
         if (dirX > 0f)
         {
-            anim.SetBool("running", true); 
+            anim.SetBool("run", true); 
             sprite.flipX = false;
         }
         else if (dirX < 0f)
         {
-            anim.SetBool("running", true);
+            anim.SetBool("run", true);
             sprite.flipX = true;
         }
         else
         {
-            anim.SetBool("running", false);
+            anim.SetBool("run", false);
         }
        }
 
