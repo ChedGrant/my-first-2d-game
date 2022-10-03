@@ -1,5 +1,8 @@
 Note:
-Branch: Original Backup
-This has the backup with the code for character animations (idle (standing), run and jump).
+Navigate to the branch "backup" to download the original backup version.
+  What it include:
+- Character animation (idle (standing), running, jumping)
 
-I will be updating the Level 1 branch frequently. 
+Branch: 
+Backup = Original Backup version
+Level 1 = Pushing updated codes to build out a level
