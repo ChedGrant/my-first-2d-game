@@ -13,7 +13,8 @@ private float dirX = 0f;
  [SerializeField] private float jumpForce = 7f;
 
 private enum MovementState { idle, running, jumping, falling }
-private MovementState state = MovementState.idle;
+//remove the value (below) and set the state with the animator (UpdateAnimatorState)
+//private MovementState state = MovementState.idle;
 
     // Start is called before the first frame update
     private void Start()
@@ -40,20 +41,35 @@ private MovementState state = MovementState.idle;
        //sprite.flipX --> allows character to move in both directions
        private void UpdateAnimationState()
        {
+        // we will call on this local variable at the start
+        MovementState state;
+
         if (dirX > 0f)
         {
-            anim.SetBool("run", true); 
+            state = MovementState.running;
             sprite.flipX = false;
         }
         else if (dirX < 0f)
         {
-            anim.SetBool("run", true);
+            state = MovementState.running;
             sprite.flipX = true;
         }
         else
         {
-            anim.SetBool("run", false);
+           state = MovementState.idle;
         }
+
+        if (rb.velocity.y > 1f)
+        {
+            state = MovementState.jumping;
+        }
+        else if (rb.velocity.y < -.1f)
+        {
+            state = MovementState.falling;
+        }
+        //We will be using this code below to call it one-time at the end of the method
+        // this area is not working (below) --> code in flow 
+        anim.SetInteger("state", (int)state);
        }
 
 }
